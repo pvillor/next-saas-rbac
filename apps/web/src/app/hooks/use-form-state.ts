@@ -1,5 +1,4 @@
 import { useState, useTransition, type FormEvent } from 'react'
-import { signInWithEmailAndPassword } from '../auth/sign-in/actions'
 
 interface FormState {
   success: boolean
@@ -9,6 +8,7 @@ interface FormState {
 
 export function useFormState(
   action: (data: FormData) => Promise<FormState>,
+  onSuccess: () => Promise<void> | void,
   initialState?: FormState
 ) {
   const [isPending, startTransition] = useTransition()
@@ -29,6 +29,10 @@ export function useFormState(
 
     startTransition(async () => {
       const state = await action(data)
+
+      if (state.success === true && onSuccess) {
+        await onSuccess()
+      }
 
       setFormState(state)
     })
