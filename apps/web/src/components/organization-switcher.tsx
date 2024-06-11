@@ -67,7 +67,7 @@ export async function OrganizationSwitcher() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Link href="/create-organization">
+          <Link href="/create-organization" className="flex items-center">
             <PlusCircle className="mr-2 size-4" />
             Create new
           </Link>
