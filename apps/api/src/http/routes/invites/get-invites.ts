@@ -75,6 +75,8 @@ export async function getInvites(app: FastifyInstance) {
             createdAt: 'desc',
           },
         })
+
+        return { invites }
       }
     )
 }
