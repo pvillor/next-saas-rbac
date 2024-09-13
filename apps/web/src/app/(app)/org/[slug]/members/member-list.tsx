@@ -72,11 +72,11 @@ export async function MemberList() {
                         'transfer_ownership',
                         authOrganization,
                       ) && (
-                          <Button size="sm" variant="ghost">
-                            <ArrowLeftRight className="mr-2 size-4" />
-                            Transfer ownership
-                          </Button>
-                        )}
+                        <Button size="sm" variant="ghost">
+                          <ArrowLeftRight className="mr-2 size-4" />
+                          Transfer ownership
+                        </Button>
+                      )}
 
                       <UpdateMemberRoleSelect
                         memberId={member.id}
