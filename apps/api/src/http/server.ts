@@ -76,7 +76,9 @@ app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
 
-app.register(fastifyCors)
+app.register(fastifyCors, {
+  origin: ['https://next-saas-rbac-nine.vercel.app/', 'http://localhost:3000']
+})
 
 app.register(createAccount)
 app.register(authenticateWithPassword)
