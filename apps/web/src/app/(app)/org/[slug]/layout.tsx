@@ -1,7 +1,7 @@
 import { Header } from '@/components/header'
 import { Tabs } from '@/components/tabs'
 
-export default async function OrgLayout({
+export async function OrgLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
